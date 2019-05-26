@@ -12,15 +12,14 @@ Module ADMBD
         Dim OpenFileDialog1 As New OpenFileDialog
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         If result = DialogResult.OK Then
-            MsgBox("Data Source=" & IO.Path.GetDirectoryName(OpenFileDialog1.FileName) & OpenFileDialog1.FileName)
-            confconexion = "Data Source=" & IO.Path.GetDirectoryName(OpenFileDialog1.FileName) & OpenFileDialog1.FileName
+            MsgBox("Data Source=" & OpenFileDialog1.FileName)
+            confconexion = "Data Source=" & OpenFileDialog1.FileName
 
         End If
     End Sub
 
     Function buscar(opcion As String, parametro As String)
         Try
-            'asdas
             Select Case opcion
                 Case "id_LOCAL-Nombre"
                     Return conexionbdsql("select id_local from LOCAL where nombre='" & parametro & "'", 2)
