@@ -20,6 +20,7 @@ Module ADMBD
 
     Function buscar(opcion As String, parametro As String)
         Try
+            'asdas
             Select Case opcion
                 Case "id_LOCAL-Nombre"
                     Return conexionbdsql("select id_local from LOCAL where nombre='" & parametro & "'", 2)
