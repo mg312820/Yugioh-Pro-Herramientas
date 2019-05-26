@@ -149,7 +149,7 @@ Module ADMBD
         Try
             consultasUpDel("UPDATE " & tabla & " Set " & valor1 & " WHERE " & valor2)
         Catch ex As Exception
-            MsgBox("Error en modificacion N 5.8")
+            MsgBox("Error en modificacion N 5.8" & ex.Message)
         End Try
     End Sub
     Sub Insert(tabla As String, valor As String, valor2 As String, verificador As String)
@@ -178,7 +178,7 @@ Module ADMBD
                 conexioninfo.Close()
             End If
         Catch ex As Exception
-            MsgBox("Error en Modificacion o alta N 6.1")
+            MsgBox("Error en Modificacion o alta N 6.1" & ex.Message)
         End Try
     End Sub
 End Module
