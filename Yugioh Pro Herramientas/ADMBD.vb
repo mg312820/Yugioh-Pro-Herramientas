@@ -1,27 +1,27 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Data.sqllite
 Imports System.Runtime.InteropServices
 Module ADMBD
     Dim comando As New SQLite.SQLiteCommand
     Public confconexion As String
     Public conexioninfo As New SQLite.SQLiteConnection
     Dim tipo As Integer
+    Public Carpeta As String
     Sub conecta()
         Dim OpenFileDialog1 As New OpenFileDialog
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         If result = DialogResult.OK Then
+            Carpeta = IO.Path.GetDirectoryName(OpenFileDialog1.FileName)
             confconexion = "Data Source=" & OpenFileDialog1.FileName
-
         End If
     End Sub
 
     Function buscar(opcion As String, parametro As String)
         Try
             Select Case opcion
-                Case "id_LOCAL-Nombre"
-                    Return conexionbdsql("select id_local from LOCAL where nombre='" & parametro & "'", 2)
-                Case "Nombre-ci"
-                    Return conexionbdsql("Select ci from persona where nombre='" & parametro & "'", 2)
+                Case "Nombre-id"
+                    Return conexionbdsql("select name from datas,texts where datas.id=texts.id and texto.id ='" & parametro & "'", 2)
+                Case "Nombre-Atributo"
+                    Return conexionbdsql("Select Nombre persona where nombre='" & parametro & "'", 2)
                 Case "ci-Nombre"
                     Return conexionbdsql("Select nombre from persona where ci='" & parametro & "'", 2)
                 Case "Nombre-ID_Grupo"
@@ -82,6 +82,7 @@ Module ADMBD
                 comando.ExecuteReader()
                 Dim Adaptador As New SQLite.SQLiteDataAdapter(consulta, conexioninfo)
                 Adaptador.Fill(ds)
+                comando.Dispose()
                 conexioninfo.Close()
                 If (TypeOf allenar Is TextBox And ds.Tables(0).Rows.Count > 0) Then
                     allenar.text = ds.Tables(0).Rows(0).Item(0)

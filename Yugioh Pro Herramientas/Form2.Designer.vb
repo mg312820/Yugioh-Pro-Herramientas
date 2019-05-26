@@ -24,9 +24,9 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -45,7 +45,7 @@ Partial Class Form2
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -59,49 +59,49 @@ Partial Class Form2
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 28)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 20)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(151, 198)
+        Me.PictureBox2.Size = New System.Drawing.Size(194, 269)
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(182, 35)
+        Me.Label1.Location = New System.Drawing.Point(12, 308)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Nombre"
         '
-        'TextBox1
+        'txtNombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(271, 35)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(284, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.txtNombre.Location = New System.Drawing.Point(62, 305)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(144, 20)
+        Me.txtNombre.TabIndex = 6
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(374, 172)
+        Me.Label2.Location = New System.Drawing.Point(88, 328)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Descripcion"
         '
-        'TextBox2
+        'txtDescripcion
         '
-        Me.TextBox2.Location = New System.Drawing.Point(169, 188)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(478, 162)
-        Me.TextBox2.TabIndex = 8
+        Me.txtDescripcion.Location = New System.Drawing.Point(12, 353)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtDescripcion.Size = New System.Drawing.Size(194, 166)
+        Me.txtDescripcion.TabIndex = 8
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(418, 365)
+        Me.PictureBox1.Location = New System.Drawing.Point(62, 525)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.TabIndex = 10
@@ -125,12 +125,12 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.txtnombreB)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.TextBox3)
-        Me.Panel1.Location = New System.Drawing.Point(126, -2)
+        Me.Panel1.Location = New System.Drawing.Point(329, 23)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(674, 456)
+        Me.Panel1.Size = New System.Drawing.Size(731, 552)
         Me.Panel1.TabIndex = 13
         '
         'CheckBox1
@@ -145,14 +145,18 @@ Partial Class Form2
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(278, 10)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(404, 430)
         Me.DataGridView1.TabIndex = 33
         '
         'PictureBox3
         '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PictureBox3.Location = New System.Drawing.Point(142, 239)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(66, 28)
@@ -268,12 +272,12 @@ Partial Class Form2
         Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox1.TabIndex = 17
         '
-        'TextBox4
+        'txtnombreB
         '
-        Me.TextBox4.Location = New System.Drawing.Point(119, 30)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox4.TabIndex = 15
+        Me.txtnombreB.Location = New System.Drawing.Point(119, 30)
+        Me.txtnombreB.Name = "txtnombreB"
+        Me.txtnombreB.Size = New System.Drawing.Size(153, 20)
+        Me.txtnombreB.TabIndex = 15
         '
         'Label3
         '
@@ -293,7 +297,7 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 273)
+        Me.Button1.Location = New System.Drawing.Point(223, 15)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 43)
         Me.Button1.TabIndex = 14
@@ -308,14 +312,14 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1072, 576)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form2"
@@ -333,9 +337,9 @@ Partial Class Form2
 
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CheckBox1 As CheckBox
@@ -354,7 +358,7 @@ Partial Class Form2
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtnombreB As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button1 As Button
