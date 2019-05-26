@@ -29,32 +29,32 @@ Partial Class Form2
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox2
@@ -128,76 +128,85 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.TextBox3)
-        Me.Panel1.Location = New System.Drawing.Point(106, -2)
+        Me.Panel1.Location = New System.Drawing.Point(126, -2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(694, 456)
+        Me.Panel1.Size = New System.Drawing.Size(674, 456)
         Me.Panel1.TabIndex = 13
         '
-        'Label3
+        'CheckBox1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 59)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(83, 13)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "Codigo de Carta"
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(119, 216)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(74, 17)
+        Me.CheckBox1.TabIndex = 34
+        Me.CheckBox1.Text = "Traducido"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'DataGridView1
         '
-        Me.TextBox3.Location = New System.Drawing.Point(119, 56)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox3.TabIndex = 13
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(278, 10)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(404, 430)
+        Me.DataGridView1.TabIndex = 33
         '
-        'TextBox4
+        'PictureBox3
         '
-        Me.TextBox4.Location = New System.Drawing.Point(119, 30)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox4.TabIndex = 15
+        Me.PictureBox3.Location = New System.Drawing.Point(142, 239)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(66, 28)
+        Me.PictureBox3.TabIndex = 32
+        Me.PictureBox3.TabStop = False
         '
-        'ComboBox1
+        'Label10
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(119, 82)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
-        Me.ComboBox1.TabIndex = 17
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(180, 193)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(28, 13)
+        Me.Label10.TabIndex = 31
+        Me.Label10.Text = "DEF"
         '
-        'Label4
+        'Label9
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 33)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Nombre"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(85, 193)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(28, 13)
+        Me.Label9.TabIndex = 30
+        Me.Label9.Text = "ATK"
         '
-        'Label5
+        'Label8
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 85)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Categoria"
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(3, 163)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(28, 13)
+        Me.Label8.TabIndex = 29
+        Me.Label8.Text = "Tipo"
         '
-        'Label6
+        'TextBox6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 112)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 13)
-        Me.Label6.TabIndex = 21
-        Me.Label6.Text = "Sub Categoria"
+        Me.TextBox6.Location = New System.Drawing.Point(214, 190)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(58, 20)
+        Me.TextBox6.TabIndex = 28
         '
-        'ComboBox2
+        'TextBox5
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(119, 109)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(153, 21)
-        Me.ComboBox2.TabIndex = 20
+        Me.TextBox5.Location = New System.Drawing.Point(119, 190)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(58, 20)
+        Me.TextBox5.TabIndex = 27
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(119, 163)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(153, 21)
+        Me.ComboBox4.TabIndex = 25
         '
         'Label7
         '
@@ -216,80 +225,71 @@ Partial Class Form2
         Me.ComboBox3.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox3.TabIndex = 22
         '
-        'ComboBox4
+        'Label6
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(119, 163)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(153, 21)
-        Me.ComboBox4.TabIndex = 25
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(3, 112)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 21
+        Me.Label6.Text = "Sub Categoria"
         '
-        'TextBox5
+        'ComboBox2
         '
-        Me.TextBox5.Location = New System.Drawing.Point(119, 190)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(58, 20)
-        Me.TextBox5.TabIndex = 27
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(119, 109)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(153, 21)
+        Me.ComboBox2.TabIndex = 20
         '
-        'TextBox6
+        'Label5
         '
-        Me.TextBox6.Location = New System.Drawing.Point(214, 190)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(58, 20)
-        Me.TextBox6.TabIndex = 28
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 85)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Categoria"
         '
-        'Label8
+        'Label4
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(3, 163)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(28, 13)
-        Me.Label8.TabIndex = 29
-        Me.Label8.Text = "Tipo"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Nombre"
         '
-        'Label9
+        'ComboBox1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(85, 193)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(28, 13)
-        Me.Label9.TabIndex = 30
-        Me.Label9.Text = "ATK"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(119, 82)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
+        Me.ComboBox1.TabIndex = 17
         '
-        'Label10
+        'TextBox4
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(180, 193)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(28, 13)
-        Me.Label10.TabIndex = 31
-        Me.Label10.Text = "DEF"
+        Me.TextBox4.Location = New System.Drawing.Point(119, 30)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(153, 20)
+        Me.TextBox4.TabIndex = 15
         '
-        'PictureBox3
+        'Label3
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(142, 239)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(66, 28)
-        Me.PictureBox3.TabIndex = 32
-        Me.PictureBox3.TabStop = False
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 13)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Codigo de Carta"
         '
-        'DataGridView1
+        'TextBox3
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(278, 10)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(404, 430)
-        Me.DataGridView1.TabIndex = 33
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(119, 216)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(74, 17)
-        Me.CheckBox1.TabIndex = 34
-        Me.CheckBox1.Text = "Traducido"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.TextBox3.Location = New System.Drawing.Point(119, 56)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(153, 20)
+        Me.TextBox3.TabIndex = 13
         '
         'Button1
         '
@@ -324,8 +324,8 @@ Partial Class Form2
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

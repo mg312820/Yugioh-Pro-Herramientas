@@ -2,8 +2,6 @@
 Imports System.Data.sqllite
 Imports System.Runtime.InteropServices
 Module ADMBD
-    Dim usuario As String = "bgonzalez"
-    Dim contraseña As String = "bgonzalez"
     Dim comando As New SQLite.SQLiteCommand
     Public confconexion As String
     Public conexioninfo As New SQLite.SQLiteConnection
@@ -12,7 +10,6 @@ Module ADMBD
         Dim OpenFileDialog1 As New OpenFileDialog
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         If result = DialogResult.OK Then
-            MsgBox("Data Source=" & OpenFileDialog1.FileName)
             confconexion = "Data Source=" & OpenFileDialog1.FileName
 
         End If
@@ -63,8 +60,6 @@ Module ADMBD
             If (conexioninfo.State = ConnectionState.Open) Then
                 conexioninfo.Close()
             End If
-            MsgBox(confconexion)
-            ' confconexion = "Data Source=D:\Juegos\Yugioh\ygopro_vs_links_beta\cards.cdb"
             conexioninfo.ConnectionString = confconexion
             conexioninfo.Open()
             comando.Connection = conexioninfo
@@ -74,7 +69,6 @@ Module ADMBD
             conexioninfo.Close()
             Return False
         Catch ex As Exception
-
             MsgBox("Error de Programa N 5.5.2 " & ex.Message)
             conexioninfo.Close()
             Return False
