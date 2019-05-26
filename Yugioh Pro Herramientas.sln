@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Yugioh Pro Herramientas", "Yugioh Pro Herramientas\Yugioh Pro Herramientas.vbproj", "{EA316DA1-E418-41B6-80AD-DE9B902C22BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA316DA1-E418-41B6-80AD-DE9B902C22BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA316DA1-E418-41B6-80AD-DE9B902C22BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA316DA1-E418-41B6-80AD-DE9B902C22BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA316DA1-E418-41B6-80AD-DE9B902C22BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC54D0B4-60CB-484C-B9BB-E5B5A67F08AD}
+	EndGlobalSection
+EndGlobal
