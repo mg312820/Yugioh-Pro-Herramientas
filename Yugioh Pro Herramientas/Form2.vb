@@ -14,19 +14,18 @@ Public Class Form2
         '  hilo = New Thread(New ThreadStart(AddressOf CargarDatosHilo))
         '  hilo.Start()
         '  DataGridView1.Refresh()
-        conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id and texts.name= '" & txtnombreB.Text & "'", DataGridView1)
-        Me.Refresh()
+        conexionbdsql("Select texts.id,name from texts where texts.name ='" & txtnombreB.Text & "'", DataGridView1)
         DataGridView1.Refresh()
+        DataGridView1.RefreshEdit()
     End Sub
-    Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        conecta()
-        conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
+    Sub Button1_Click(sender As Object, e As EventArgs)
+
     End Sub
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         indice = e.RowIndex
         PictureBox2.ImageLocation = ADMBD.Carpeta & "\pics\" & (DataGridView1.Rows(indice).Cells(0).Value) & ".jpg"
-        conexionbdsql("Select name from datas,texts where datas.id=texts.id and texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtNombre)
-        conexionbdsql("Select desc from datas,texts where datas.id=texts.id and texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtDescripcion)
+        conexionbdsql("Select name from texts where texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtNombre)
+        conexionbdsql("Select desc from texts where texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtDescripcion)
     End Sub
     Delegate Sub pasar(ByVal cargar As DataGridView, idgrupo As String)
     Sub rancio(ByVal cargar As DataGridView, idgrupo As String)
@@ -50,5 +49,16 @@ Public Class Form2
         Else
             MsgBox("Modificacion con exito")
         End If
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        conecta()
+        conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
+        DataGridView1.Refresh()
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
+        DataGridView1.Refresh()
     End Sub
 End Class

@@ -82,8 +82,10 @@ Module ADMBD
                 comando.ExecuteReader()
                 Dim Adaptador As New SQLite.SQLiteDataAdapter(consulta, conexioninfo)
                 Adaptador.Fill(ds)
+                Adaptador.Dispose()
                 comando.Dispose()
                 conexioninfo.Close()
+                MsgBox(conexioninfo.State)
                 If (TypeOf allenar Is TextBox And ds.Tables(0).Rows.Count > 0) Then
                     allenar.text = ds.Tables(0).Rows(0).Item(0)
                     Exit Function

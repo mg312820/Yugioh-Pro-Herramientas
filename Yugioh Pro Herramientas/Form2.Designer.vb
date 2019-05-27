@@ -45,13 +45,16 @@ Partial Class Form2
         Me.txtnombreB = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +96,8 @@ Partial Class Form2
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBox5)
+        Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.PictureBox3)
@@ -120,7 +125,7 @@ Partial Class Form2
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(119, 216)
+        Me.CheckBox1.Location = New System.Drawing.Point(119, 237)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(74, 17)
         Me.CheckBox1.TabIndex = 34
@@ -141,7 +146,7 @@ Partial Class Form2
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(180, 193)
+        Me.Label10.Location = New System.Drawing.Point(180, 214)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(28, 13)
         Me.Label10.TabIndex = 31
@@ -150,7 +155,7 @@ Partial Class Form2
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(85, 193)
+        Me.Label9.Location = New System.Drawing.Point(85, 214)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(28, 13)
         Me.Label9.TabIndex = 30
@@ -159,7 +164,7 @@ Partial Class Form2
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(3, 163)
+        Me.Label8.Location = New System.Drawing.Point(3, 184)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(28, 13)
         Me.Label8.TabIndex = 29
@@ -167,14 +172,14 @@ Partial Class Form2
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(214, 190)
+        Me.TextBox6.Location = New System.Drawing.Point(214, 211)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(58, 20)
         Me.TextBox6.TabIndex = 28
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(119, 190)
+        Me.TextBox5.Location = New System.Drawing.Point(119, 211)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(58, 20)
         Me.TextBox5.TabIndex = 27
@@ -182,7 +187,7 @@ Partial Class Form2
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(119, 163)
+        Me.ComboBox4.Location = New System.Drawing.Point(119, 184)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox4.TabIndex = 25
@@ -190,7 +195,7 @@ Partial Class Form2
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(3, 139)
+        Me.Label7.Location = New System.Drawing.Point(3, 160)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 13)
         Me.Label7.TabIndex = 23
@@ -199,7 +204,7 @@ Partial Class Form2
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(119, 139)
+        Me.ComboBox3.Location = New System.Drawing.Point(119, 160)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox3.TabIndex = 22
@@ -207,7 +212,7 @@ Partial Class Form2
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 112)
+        Me.Label6.Location = New System.Drawing.Point(3, 133)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
         Me.Label6.TabIndex = 21
@@ -216,7 +221,7 @@ Partial Class Form2
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(119, 109)
+        Me.ComboBox2.Location = New System.Drawing.Point(119, 130)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox2.TabIndex = 20
@@ -224,7 +229,7 @@ Partial Class Form2
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 85)
+        Me.Label5.Location = New System.Drawing.Point(3, 106)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 19
@@ -233,7 +238,7 @@ Partial Class Form2
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 33)
+        Me.Label4.Location = New System.Drawing.Point(3, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 13)
         Me.Label4.TabIndex = 18
@@ -242,14 +247,14 @@ Partial Class Form2
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(119, 82)
+        Me.ComboBox1.Location = New System.Drawing.Point(119, 103)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox1.TabIndex = 17
         '
         'txtnombreB
         '
-        Me.txtnombreB.Location = New System.Drawing.Point(119, 30)
+        Me.txtnombreB.Location = New System.Drawing.Point(119, 51)
         Me.txtnombreB.Name = "txtnombreB"
         Me.txtnombreB.Size = New System.Drawing.Size(153, 20)
         Me.txtnombreB.TabIndex = 15
@@ -257,7 +262,7 @@ Partial Class Form2
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 59)
+        Me.Label3.Location = New System.Drawing.Point(3, 80)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(83, 13)
         Me.Label3.TabIndex = 14
@@ -265,29 +270,40 @@ Partial Class Form2
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(119, 56)
+        Me.TextBox3.Location = New System.Drawing.Point(119, 77)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(153, 20)
         Me.TextBox3.TabIndex = 13
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(223, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 43)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Seleccionar Base"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.Yugioh_Pro_Herramientas.My.Resources.Resources.Select_Bd
+        Me.PictureBox5.Location = New System.Drawing.Point(146, 6)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(126, 39)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 36
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.Yugioh_Pro_Herramientas.My.Resources.Resources.Reset
+        Me.PictureBox4.Location = New System.Drawing.Point(6, 3)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(107, 42)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 35
+        Me.PictureBox4.TabStop = False
+        '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PictureBox3.Image = Global.Yugioh_Pro_Herramientas.My.Resources.Resources.buscar
-        Me.PictureBox3.Location = New System.Drawing.Point(143, 233)
+        Me.PictureBox3.Location = New System.Drawing.Point(92, 254)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(94, 33)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -318,7 +334,6 @@ Partial Class Form2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1072, 576)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
@@ -332,6 +347,8 @@ Partial Class Form2
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -366,6 +383,7 @@ Partial Class Form2
     Friend WithEvents txtnombreB As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
 End Class
