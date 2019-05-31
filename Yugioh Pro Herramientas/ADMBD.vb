@@ -3,17 +3,28 @@ Imports System.Runtime.InteropServices
 Module ADMBD
     Dim comando As New SQLite.SQLiteCommand
     Public confconexion As String
+    Public confconexion2 As String
+    Public confconexion3 As String = "Data Source=" & Application.StartupPath & "\BDPrograma.cdb"
     Public conexioninfo As New SQLite.SQLiteConnection
     Dim tipo As Integer
     Public Carpeta As String
     Sub conecta()
+        conexioninfo.Close()
         Dim OpenFileDialog1 As New OpenFileDialog
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         If result = DialogResult.OK Then
             Carpeta = IO.Path.GetDirectoryName(OpenFileDialog1.FileName)
-            confconexion = "Data Source=" & OpenFileDialog1.FileName
+            confconexion2 = "Data Source=" & OpenFileDialog1.FileName
+            confconexion = confconexion2
         End If
     End Sub
+    Function Conecta2(consulta As String, allenar As System.Object)
+        confconexion = confconexion3
+        conexioninfo.Close()
+        conexionbdsql(consulta, allenar)
+        conexioninfo.Close()
+        confconexion = confconexion2
+    End Function
 
     Function buscar(opcion As String, parametro As String)
         Try
@@ -118,9 +129,12 @@ Module ADMBD
                         For I As Integer = 0 To ds.Tables(0).Rows.Count - 1
                             allenar.items.add(ds.Tables(0).Rows(I).Item(0))
                         Next
-                        If (TypeOf allenar Is ComboBox) Then Return allenar.Selecteditem = (allenar.Items(0))
+                        If (TypeOf allenar Is ComboBox) Then
+                            allenar.Selecteditem = (allenar.Items(0))
+                        End If
                     End If 'Selecciona el primer elemento del combobox 
                     If (TypeOf allenar Is DataGridView) Then 'llena un datagridview con la consulta
+
                         allenar.DataSource = Nothing
                         allenar.Refresh()
                         allenar.DataSource = ds.Tables(0)

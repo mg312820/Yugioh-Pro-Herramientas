@@ -18,9 +18,6 @@ Public Class Form2
         DataGridView1.Refresh()
         DataGridView1.RefreshEdit()
     End Sub
-    Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         indice = e.RowIndex
         PictureBox2.ImageLocation = ADMBD.Carpeta & "\pics\" & (DataGridView1.Rows(indice).Cells(0).Value) & ".jpg"
@@ -40,7 +37,6 @@ Public Class Form2
             Me.Refresh()
         End If
     End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Modificar("texts", "name='" & txtNombre.Text & "'", "id=" & DataGridView1.Rows(indice).Cells(0).Value)
         Modificar("texts", "desc='" & txtDescripcion.Text & "'", "id=" & DataGridView1.Rows(indice).Cells(0).Value)
@@ -50,27 +46,30 @@ Public Class Form2
             MsgBox("Modificacion con exito")
         End If
     End Sub
-
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         conecta()
         conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
         DataGridView1.Refresh()
+        Label11.Text = DataGridView1.Rows.Count
+        ' Timer1.Interval = 10000
+        '   Timer1.Enabled = True
     End Sub
-
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
         DataGridView1.Refresh()
     End Sub
-
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Interval = 5000
-        Timer1.Enabled = True
-
+    Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        '  conexionbdsql("Select texts.id,name from texts where name like '%" & txtnombreB.Text & "%'", DataGridView1)
+        '  DataGridView1.Refresh()
     End Sub
 
-    Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-
-        MsgBox("hola")
-
+    Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
+        conexionbdsql("Select texts.id,name from texts where name like '%" & txtnombreB.Text & "%'", DataGridView1)
+        DataGridView1.Refresh()
+        Label11.Text = DataGridView1.Rows.Count
+    End Sub
+    Private Sub CBAtributo_VisibleChanged(sender As Object, e As EventArgs) Handles CBAtributo.VisibleChanged
+        Conecta2("Select Nombre from Atributos", CBAtributo)
+        CBAtributo.SelectedIndex = 0
     End Sub
 End Class
