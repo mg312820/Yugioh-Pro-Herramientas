@@ -62,11 +62,15 @@ Public Class Form2
         DataGridView1.Refresh()
     End Sub
 
-    Private Sub Form2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress, txtnombreB.KeyPress, Panel1.KeyPress, MyClass.KeyPress
-        If (e.Handled == Keys.Enter) Then
-            MsgBox("d")
-            conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
-            DataGridView1.Refresh()
-        End If
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Interval = 5000
+        Timer1.Enabled = True
+
+    End Sub
+
+    Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        MsgBox("hola")
+
     End Sub
 End Class

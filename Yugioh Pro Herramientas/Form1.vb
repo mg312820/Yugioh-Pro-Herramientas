@@ -10,4 +10,5 @@
     Private Sub MenuStrip1_MouseDown(sender As Object, e As MouseEventArgs) Handles MenuStrip1.MouseDown
         arrastrar(Me)
     End Sub
+
 End Class
