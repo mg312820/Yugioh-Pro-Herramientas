@@ -57,12 +57,14 @@ Module ADMBD
     End Function
     Public Function Conectar()
         Try
-            If (conexioninfo.State = ConnectionState.Open) Then
+            If (conexioninfo.State = "0") Then
+
                 conexioninfo.Close()
             End If
             conexioninfo.ConnectionString = confconexion
             conexioninfo.Open()
             comando.Connection = conexioninfo
+
             Return True
         Catch ex As SqlException
             MsgBox("Error de conexion Base N 5.5 " & ex.Number)
@@ -85,7 +87,6 @@ Module ADMBD
                 Adaptador.Dispose()
                 comando.Dispose()
                 conexioninfo.Close()
-                MsgBox(conexioninfo.State)
                 If (TypeOf allenar Is TextBox And ds.Tables(0).Rows.Count > 0) Then
                     allenar.text = ds.Tables(0).Rows(0).Item(0)
                     Exit Function
@@ -120,10 +121,8 @@ Module ADMBD
                         If (TypeOf allenar Is ComboBox) Then allenar.Selecteditem = (allenar.Items(0)) 'Selecciona el primer elemento del combobox
                     End If
                     If (TypeOf allenar Is DataGridView) Then 'llena un datagridview con la consulta
-                        For I As Integer = 0 To allenar.Rows.count
-                            allenar.DataSource = Nothing
-                            allenar.Refresh()
-                        Next
+                        allenar.DataSource = Nothing
+                        allenar.Refresh()
                         allenar.DataSource = ds.Tables(0)
                     End If
                 End If
