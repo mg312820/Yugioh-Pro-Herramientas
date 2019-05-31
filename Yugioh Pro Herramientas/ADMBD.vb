@@ -52,7 +52,7 @@ Module ADMBD
             End Select
             Return MsgBox("No coloco una opcion valida en buscar Error N 5.4.1")
         Catch ex As Exception
-            MsgBox(" ")
+            Return MsgBox("Error de busqueda")
         End Try
     End Function
     Public Function Conectar()
@@ -118,8 +118,8 @@ Module ADMBD
                         For I As Integer = 0 To ds.Tables(0).Rows.Count - 1
                             allenar.items.add(ds.Tables(0).Rows(I).Item(0))
                         Next
-                        If (TypeOf allenar Is ComboBox) Then allenar.Selecteditem = (allenar.Items(0)) 'Selecciona el primer elemento del combobox
-                    End If
+                        If (TypeOf allenar Is ComboBox) Then Return allenar.Selecteditem = (allenar.Items(0))
+                    End If 'Selecciona el primer elemento del combobox 
                     If (TypeOf allenar Is DataGridView) Then 'llena un datagridview con la consulta
                         allenar.DataSource = Nothing
                         allenar.Refresh()
@@ -135,9 +135,12 @@ Module ADMBD
                 Return "opcion no valida"
             End If
         Catch ex As Exception
-            MsgBox("Error consulta N 5.6" & ex.Message)
+
+            Return MsgBox("Error consulta N 5.6" & ex.Message)
         End Try
+#Disable Warning BC42105 ' La función no devuelve un valor en todas las rutas de código
     End Function
+#Enable Warning BC42105 ' La función no devuelve un valor en todas las rutas de código
     Sub eliminar(tabla As String, valor1 As String)
         Try
             consultasUpDel("DELETE from" & tabla & " WHERE " & valor1)
