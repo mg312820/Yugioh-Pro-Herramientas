@@ -1,45 +1,15 @@
-﻿Imports System.Threading
-
-Public Class Form2
-    Public hilo As Thread
+﻿Public Class Form2
     Public indice As Integer
-    Private Sub CargarDatosHilo(ByVal cargar As DataGridView, idgrupo As String)
-        '' rancio(DataGridView1, txtnombreB.Text)
-        '      Me.Refresh()
-        ' hilo.Abort()
-    End Sub
-
-    Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        '   Me.CheckForIllegalCrossThreadCalls = False
-        '  hilo = New Thread(New ThreadStart(AddressOf CargarDatosHilo))
-        '  hilo.Start()
-        '  DataGridView1.Refresh()
-        conexionbdsql("Select texts.id,name from texts where texts.name ='" & txtnombreB.Text & "'", DataGridView1)
-        DataGridView1.Refresh()
-        DataGridView1.RefreshEdit()
-    End Sub
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         indice = e.RowIndex
         PictureBox2.ImageLocation = ADMBD.Carpeta & "\pics\" & (DataGridView1.Rows(indice).Cells(0).Value) & ".jpg"
         conexionbdsql("Select name from texts where texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtNombre)
         conexionbdsql("Select desc from texts where texts.id=" & DataGridView1.Rows(indice).Cells(0).Value, txtDescripcion)
     End Sub
-    Delegate Sub pasar(ByVal cargar As DataGridView, idgrupo As String)
-    Sub rancio(ByVal cargar As DataGridView, idgrupo As String)
-        If InvokeRequired Then
-            Invoke(New pasar(AddressOf rancio))
-        Else
-            cargar.Rows.Clear()
-            If (conexioninfo.State = ConnectionState.Open) Then
-                conexioninfo.Close()
-            End If
-            conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id and texts.name= '" & idgrupo & "'", DataGridView1)
-            Me.Refresh()
-        End If
-    End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Modificar("texts", "name='" & txtNombre.Text & "'", "id=" & DataGridView1.Rows(indice).Cells(0).Value)
         Modificar("texts", "desc='" & txtDescripcion.Text & "'", "id=" & DataGridView1.Rows(indice).Cells(0).Value)
+        Modificar("texts", "str15='Modificada'", "id=" & DataGridView1.Rows(indice).Cells(0).Value)
         If (conexionbdsql("select name from texts where name= name='" & txtNombre.Text & "'", True)) Then
             MsgBox("Modificacion con Error")
         Else
@@ -49,27 +19,85 @@ Public Class Form2
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         conecta()
         conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
-        DataGridView1.Refresh()
         Label11.Text = DataGridView1.Rows.Count
-        ' Timer1.Interval = 10000
-        '   Timer1.Enabled = True
     End Sub
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
-        DataGridView1.Refresh()
     End Sub
-    Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        '  conexionbdsql("Select texts.id,name from texts where name like '%" & txtnombreB.Text & "%'", DataGridView1)
-        '  DataGridView1.Refresh()
-    End Sub
-
     Private Sub txtnombreB_TextChanged(sender As Object, e As EventArgs) Handles txtnombreB.TextChanged
         conexionbdsql("Select texts.id,name from texts where name like '%" & txtnombreB.Text & "%'", DataGridView1)
-        DataGridView1.Refresh()
         Label11.Text = DataGridView1.Rows.Count
     End Sub
     Private Sub CBAtributo_VisibleChanged(sender As Object, e As EventArgs) Handles CBAtributo.VisibleChanged
         Conecta2("Select Nombre from Atributos", CBAtributo)
         CBAtributo.SelectedIndex = 0
+    End Sub
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Panel1.BackColor = Color.FromArgb(200, 100, 100, 100)
+        Panel2.BackColor = Color.FromArgb(200, 100, 100, 100)
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        Dim result As DialogResult = FolderBrowserDialog1.ShowDialog
+        If result = DialogResult.OK Then
+            Carpeta = FolderBrowserDialog1.SelectedPath
+            confconexion = "Data Source=" & FolderBrowserDialog1.SelectedPath & "\cards.cdb"
+            conexionbdsql("Select datas.id,name from datas,texts where datas.id=texts.id ", DataGridView1)
+            Label11.Text = DataGridView1.Rows.Count
+        End If
+    End Sub
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txtid.TextChanged
+        conexionbdsql("Select texts.id,name from texts where id like '%" & txtid.Text & "%'", DataGridView1)
+        Label11.Text = DataGridView1.Rows.Count
+    End Sub
+
+    Private Sub PictureBox3_Click_1(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Dim condicion As String = " "
+        Dim contador As Integer = 0
+        If CHBAtributo.CheckState = 1 Then
+            condicion += "attribute='" & Conecta2("Select ID from Atributos where Nombre='" & CBAtributo.SelectedItem & "'", 2) & " ' "
+            contador += 1
+        End If
+        If contador = 1 Then
+            condicion += " and "
+        End If
+        If chbNombre.CheckState = 1 Then
+            condicion += " name like '%" & txtnombreB.Text & "% "
+            contador += 1
+        End If
+        If contador = 2 Then
+            condicion += " and "
+        End If
+        If Chbnivel.CheckState = 1 Then
+            condicion += " level = '" & cbnivel.SelectedItem & " '"
+            contador += 1
+        End If
+        If contador = 3 Then
+            condicion += " and "
+        End If
+        If ChbId.CheckState = 1 Then
+            condicion += " texts.id = '" & txtid.Text & " '"
+            contador += 1
+        End If
+        If contador = 4 Then
+            condicion += " and "
+        End If
+        If ChbATKDEF.CheckState = 1 Then
+            condicion += " atk = '" & TextBox5.Text & " ' and def='" & TextBox6.Text & "'"
+            contador += 1
+        End If
+        MsgBox("Select texts.id,name from texts,datas where  datas.id = texts.id and " & condicion)
+
+        conexionbdsql("Select texts.id,name from texts,datas where  datas.id = texts.id and " & condicion, DataGridView1)
+        DataGridView1.RefreshEdit()
+    End Sub
+
+    Private Sub txtid_KeyDown(sender As Object, e As KeyEventArgs) Handles txtid.KeyDown
+
+    End Sub
+
+    Private Sub txtid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtid.KeyPress
+        verificarN(txtid, e, 25)
     End Sub
 End Class

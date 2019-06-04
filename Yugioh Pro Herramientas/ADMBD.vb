@@ -21,9 +21,11 @@ Module ADMBD
     Function Conecta2(consulta As String, allenar As System.Object)
         confconexion = confconexion3
         conexioninfo.Close()
-        conexionbdsql(consulta, allenar)
+        Dim retorno As System.Object
+        retorno = conexionbdsql(consulta, allenar)
         conexioninfo.Close()
         confconexion = confconexion2
+        Return retorno
     End Function
 
     Function buscar(opcion As String, parametro As String)
