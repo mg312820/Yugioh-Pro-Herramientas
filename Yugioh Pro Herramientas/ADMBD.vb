@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Runtime.InteropServices
+Imports 
 Module ADMBD
     Dim comando As New SQLite.SQLiteCommand
     Public confconexion As String

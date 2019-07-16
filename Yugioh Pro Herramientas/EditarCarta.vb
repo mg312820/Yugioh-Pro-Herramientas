@@ -1,4 +1,4 @@
-﻿Public Class Form2
+﻿Public Class EditarCarta
     Public indice As Integer
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         indice = e.RowIndex
@@ -92,11 +92,6 @@
         conexionbdsql("Select texts.id,name from texts,datas where  datas.id = texts.id and " & condicion, DataGridView1)
         DataGridView1.RefreshEdit()
     End Sub
-
-    Private Sub txtid_KeyDown(sender As Object, e As KeyEventArgs) Handles txtid.KeyDown
-
-    End Sub
-
     Private Sub txtid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtid.KeyPress
         verificarN(txtid, e, 25)
     End Sub

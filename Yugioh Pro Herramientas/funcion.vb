@@ -8,7 +8,6 @@ Module Funcion
     <DllImport("user32.DLL", EntryPoint:="SendMessage")>
     Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
     End Sub 'Arrastrar panel
-    'Conexion Informix
     Sub selecionador(ParamArray opcion() As Form)
         For contador As Integer = 0 To opcion.Length - 1
             If opcion(contador).Visible Then
@@ -163,16 +162,4 @@ Module Funcion
         ventananueva.Show()
         Ventanaanterior.Hide()
     End Sub
-    Function CalculoNotas(nota As Double)
-        Dim maximoA As Integer = conexionbdsql("select nombre from variableprograma WHERE utilidad='APROBADO' ORDER BY cast(nombre as int) desc ", 2)
-        Dim minimor1 As Integer = conexionbdsql("select nombre from variableprograma WHERE utilidad='REPROBADO2' ORDER BY cast(nombre as int) asc ", 2)
-        If conexionbdsql("select nombre from variableprograma WHERE utilidad='REPROBADO2' ORDER BY cast(nombre as int) desc ", 2) < nota And maximoA >= nota Then
-            Return "Aprobado"
-        ElseIf minimor1 <= nota And maximoA >= nota Then
-            Return "Examen Diciembre"
-        ElseIf conexionbdsql("select nombre from variableprograma WHERE utilidad='REPROBADO1' ORDER BY cast(nombre as int) asc ", 2) <= nota And minimor1 > nota Then
-            Return "Examen Febrero"
-        End If
-        Return MsgBox("Error nota invalida")
-    End Function
 End Module
