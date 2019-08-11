@@ -102,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADMBD.vb" />
+    <Compile Include="Banlist.Designer.vb">
+      <DependentUpon>Banlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Banlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VentanaPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Banlist.resx">
+      <DependentUpon>Banlist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIMITADA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PROHIBIDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEMILIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CARTAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banlist.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

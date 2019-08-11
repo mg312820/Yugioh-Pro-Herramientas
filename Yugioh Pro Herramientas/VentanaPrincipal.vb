@@ -22,4 +22,8 @@
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        colocarpanel(Panel2, Banlist)
+    End Sub
 End Class

@@ -187,9 +187,11 @@ Partial Class VentanaPrincipal
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(19, 74)
+        Me.PictureBox2.Image = Global.Yugioh_Pro_Herramientas.My.Resources.Resources.banlist
+        Me.PictureBox2.Location = New System.Drawing.Point(8, 54)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox2.Size = New System.Drawing.Size(127, 35)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
         '
@@ -203,7 +205,7 @@ Partial Class VentanaPrincipal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Form1
+        'VentanaPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -217,7 +219,7 @@ Partial Class VentanaPrincipal
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximumSize = New System.Drawing.Size(1213, 601)
-        Me.Name = "Form1"
+        Me.Name = "VentanaPrincipal"
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
