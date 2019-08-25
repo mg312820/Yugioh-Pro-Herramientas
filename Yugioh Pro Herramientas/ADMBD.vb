@@ -111,44 +111,42 @@ Module ADMBD
                         allenar.Items().Clear()
                         allenar.items.add("No tiene")
                         allenar.Selecteditem = ("No tiene")
+                    ElseIf (TypeOf allenar Is Boolean) Then
+                        Return False
                     End If
                     Return False
-                End If
-                If (ds.Tables(0).Rows.Count) > 0 Then 'verifica que tenga mas de una fila
-                    If (TypeOf allenar Is Integer) Then
-                        If allenar = 5 Then
-                            Return ds
+                Else
+                    If (ds.Tables(0).Rows.Count) > 0 Then 'verifica que tenga mas de una fila
+                        If (TypeOf allenar Is Integer) Then
+                            If allenar = 5 Then
+                                Return ds
+                            ElseIf allenar <> 5 Then
+                                Return ds.Tables(0).Rows(0).Item(0)
+                            End If
+                        Else
+                            If (TypeOf allenar Is ComboBox Or TypeOf allenar Is ListView Or TypeOf allenar Is ListBox Or TypeOf allenar Is CheckedListBox) Then 'Permite llenar un combobox con lo devuelto de una consulta sql
+                                If (TypeOf allenar Is ListView) Then
+                                    allenar.Clear()
+                                Else
+                                    allenar.Items().Clear()
+                                End If
+                                allenar.DataSource = ds
+                                If (TypeOf allenar Is ComboBox) Then
+                                    allenar.Selecteditem = (allenar.Items(0))
+                                End If
+                            End If 'Selecciona el primer elemento del combobox 
+                            If (TypeOf allenar Is DataGridView) Then 'llena un datagridview con la consulta
+                                allenar.DataSource = Nothing
+                                allenar.Refresh()
+                                allenar.DataSource = ds.Tables(0)
+                            End If
                         End If
-                        If allenar <> 5 Then
-                            Return ds.Tables(0).Rows(0).Item(0)
-                        End If
+                    ElseIf (TypeOf allenar Is Boolean) Then
+                        Return True
                     End If
-                    If (TypeOf allenar Is ComboBox Or TypeOf allenar Is ListView Or TypeOf allenar Is ListBox Or TypeOf allenar Is CheckedListBox) Then 'Permite llenar un combobox con lo devuelto de una consulta sql
-                        If (TypeOf allenar Is ListView) Then
-                            allenar.Clear()
-                        End If
-                        allenar.Items().Clear()
-                        For I As Integer = 0 To ds.Tables(0).Rows.Count - 1
-                            allenar.items.add(ds.Tables(0).Rows(I).Item(0))
-                        Next
-                        If (TypeOf allenar Is ComboBox) Then
-                            allenar.Selecteditem = (allenar.Items(0))
-                        End If
-                    End If 'Selecciona el primer elemento del combobox 
-                    If (TypeOf allenar Is DataGridView) Then 'llena un datagridview con la consulta
-
-                        allenar.DataSource = Nothing
-                        allenar.Refresh()
-                        allenar.DataSource = ds.Tables(0)
-                    End If
+                    conexioninfo.Close() 'cierra conexion
+                    Return "opcion no valida"
                 End If
-                If (TypeOf allenar Is Boolean And ds.Tables(0).Rows.Count = 0) Then
-                    Return False
-                ElseIf (TypeOf allenar Is Boolean And ds.Tables(0).Rows.Count <> 0) Then
-                    Return True
-                End If
-                conexioninfo.Close() 'cierra conexion
-                Return "opcion no valida"
             End If
         Catch ex As Exception
 
@@ -164,6 +162,17 @@ Module ADMBD
             MsgBox("Error en eliminar N 5.7")
         End Try
 
+    End Sub
+    Sub consultasUpDel(sql As String)
+        Try
+            If Conectar() Then
+                comando.CommandText = sql
+                comando.ExecuteNonQuery()
+                conexioninfo.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Error en Modificacion o alta N 6.1" & ex.Message)
+        End Try
     End Sub
     Sub Modificar(tabla As String, valor1 As String, valor2 As String)
         Try
@@ -190,15 +199,5 @@ Module ADMBD
             MsgBox("Error en insert N 6")
         End Try
     End Sub
-    Sub consultasUpDel(sql As String)
-        Try
-            If Conectar() Then
-                comando.CommandText = sql
-                comando.ExecuteNonQuery()
-                conexioninfo.Close()
-            End If
-        Catch ex As Exception
-            MsgBox("Error en Modificacion o alta N 6.1" & ex.Message)
-        End Try
-    End Sub
+
 End Module

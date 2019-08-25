@@ -26,4 +26,16 @@
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         colocarpanel(Panel2, Banlist)
     End Sub
+
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
+        DataGridView1.DataSource = Nothing
+
+
+    End Sub
+
+    Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
+        DataGridView1.DataSource = {1}
+        DataGridView1.Refresh()
+
+    End Sub
 End Class
